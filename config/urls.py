@@ -58,4 +58,5 @@ urlpatterns = [
         name="schema-redoc",
     ),
     path("users/", include("user.urls")),
+    path("companies/", include("company.urls")),
 ]
