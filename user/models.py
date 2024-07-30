@@ -11,11 +11,11 @@ class User(models.Model):
     email = models.EmailField()
 
     class Meta:
-        """Meta definition for Company."""
+        """Meta definition for User."""
 
-        verbose_name = "Company"
-        verbose_name_plural = "Companies"
-        db_table = "company"
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+        db_table = "user"
 
     def __str__(self) -> str:
         return f"[{self.id}] {self.user_name} ({self.email})"

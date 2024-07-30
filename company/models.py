@@ -12,8 +12,8 @@ class Company(models.Model):
         """Meta definition for Company."""
 
         verbose_name = "Company"
-        verbose_name_plural = "Users"
-        db_table = "user"
+        verbose_name_plural = "Companies"
+        db_table = "company"
 
     def __str__(self):
         return self.company_name
