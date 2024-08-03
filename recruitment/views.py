@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from recruitment.models import JobPosting
 from recruitment.serializers import (
     JobPostingCreateSerializer,
@@ -10,6 +10,14 @@ from recruitment.serializers import (
 
 class JobPostingViewSet(viewsets.ModelViewSet):
     queryset = JobPosting.objects.all()
+    filter_backends = [filters.SearchFilter]
+    search_fields = [
+        "company_id__company_name",
+        "company_id__country",
+        "company_id__region",
+        "position",
+        "skills",
+    ]
 
     def get_serializer_class(self):
         if self.action == "create":
