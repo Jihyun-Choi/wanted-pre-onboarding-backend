@@ -59,4 +59,5 @@ urlpatterns = [
     ),
     path("users/", include("user.urls")),
     path("companies/", include("company.urls")),
+    path("recruitments/", include("recruitment.urls")),
 ]
