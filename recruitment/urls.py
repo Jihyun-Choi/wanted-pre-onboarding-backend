@@ -9,4 +9,7 @@ router.register(r"", JobPostingViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path(
+        "apply/", JobApplicationCreateAPIView.as_view(), name="job-application-create"
+    ),
 ]

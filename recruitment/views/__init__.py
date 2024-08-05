@@ -1,0 +1,1 @@
+from .job_application_create_api_view import JobApplicationCreateAPIView

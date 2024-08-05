@@ -1,5 +1,5 @@
 from django.contrib import admin
-from recruitment.models import JobPosting
+from recruitment.models import JobPosting, JobApplication
 
 
 @admin.register(JobPosting)
@@ -17,4 +17,18 @@ class CompanyAdmin(admin.ModelAdmin):
         "position",
         "reward",
         "skills",
+    )
+
+
+@admin.register(JobApplication)
+class JobApplicationAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "job_posting",
+        "user",
+        "applied_at",
+    )
+    search_fields = (
+        "job_posting__position",
+        "user__user_name",
     )
